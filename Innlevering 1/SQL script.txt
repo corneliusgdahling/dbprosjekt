@@ -1,0 +1,70 @@
+SQL script
+
+b) i) 
+
+CREATE TABLE Treningsøkt(
+Økt_id int NOT NULL AUTO_INCREMENT,
+Dato DATE NOT NULL,
+Varighet int NOT NULL,
+Tidspunkt TIME NOT NULL,
+PRIMARY KEY (Økt_id)
+); 
+
+CREATE TABLE Øvelse(
+Øvelse_id int NOT NULL AUTO_INCREMENT,
+Økt_id int NOT NULL,
+Navn VARCHAR(20) NOT NULL,
+Beskrivelse VARCHAR(30) NOT NULL,
+PRIMARY KEY(Øvelse_id),
+FOREIGN KEY(Økt_id) REFERENCES Treningsøkt(Økt_id)
+);
+
+CREATE TABLE Utholdenhetstrening(
+Øvelse_id int NOT NULL AUTO_INCREMENT,
+Navn VARCHAR(20) NOT NULL,
+Beskrivelse VARCHAR(30) NOT NULL,
+Lengde int,
+Varighet TIME,
+PRIMARY KEY(Øvelse_id),
+FOREIGN KEY(Øvelse_id) REFERENCES Øvelse(Øvelse_id)   ON DELETE CASCADE 
+);
+
+CREATE TABLE Styrke(
+Øvelse_id int NOT NULL AUTO_INCREMENT,
+Navn VARCHAR(20) NOT NULL,
+Beskrivelse VARCHAR(30) NOT NULL,
+Belastning int NOT NULL,
+Repitisjoner int NOT NULL,
+Sett int NOT NULL,
+PRIMARY KEY(Øvelse_id),
+FOREIGN KEY(Øvelse_id) REFERENCES Øvelse(Øvelse_id)  ON DELETE CASCADE 
+
+);
+
+CREATE TABLE Forhold(
+Økt_id int NOT NULL,
+Prestasjon SMALLINT,
+Personlig_form SMALLINT,
+PRIMARY KEY(Økt_id),
+FOREIGN KEY(Økt_id) REFERENCES Treningsøkt(Økt_id)
+);
+
+CREATE TABLE Utendørs(
+Økt_id int NOT NULL,
+Værtype VARCHAR(30) NOT NULL,
+Temperatur int,
+PRIMARY KEY(Økt_id),
+FOREIGN KEY(Økt_id) REFERENCES Forhold(Økt_id)
+);
+
+CREATE TABLE Innendørs(
+Økt_id int NOT NULL,
+Atmosfære VARCHAR(30) NOT NULL,
+Tilskuere int,
+PRIMARY KEY(Økt_id),
+FOREIGN KEY(Økt_id) REFERENCES Forhold(Økt_id)
+);
+
+
+Cornelius Dahling, Egil Uggerud, Kristoffer Finckenhagen, Martin Gundersen
+

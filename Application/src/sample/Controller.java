@@ -16,11 +16,8 @@ public class Controller {
             ResultSet rs;
             rs = testStatement.executeQuery();
             found = rs.next();
-            if (found){
-                System.out.println(rs.getString(1));
-            }
-            else{
-                System.out.println("There was a problem");
+            while (found){
+                System.out.println(rs.getString("first_name"));
             }
             testStatement.close();
         } catch (SQLException e) {
