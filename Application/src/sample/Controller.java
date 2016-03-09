@@ -15,10 +15,12 @@ public class Controller {
             testStatement = myConnection.prepareStatement(sqlStatement);
             ResultSet rs;
             rs = testStatement.executeQuery();
-            found = rs.next();
-            while (found){
-                System.out.println(rs.getString("first_name"));
+            while (rs.next()) {
+                System.out.println(rs.getString(1)); //gets the first column's rows.
             }
+
+
+
             testStatement.close();
         } catch (SQLException e) {
             e.printStackTrace();
