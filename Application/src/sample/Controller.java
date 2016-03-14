@@ -31,23 +31,23 @@ public class Controller {
     ResultSet rs;
     ArrayList<String> list = new ArrayList<>();
 
-    public void addField(){
-        try {
-            PreparedStatement testStatement;
-            String sqlStatement = "SELECT * from ChillernNavn;";
-            testStatement = myConnection.prepareStatement(sqlStatement);
-            rs = testStatement.executeQuery();
-            while (rs.next()) {
-                System.out.println(rs.getString(1)); //gets the first column's rows.
-            }
-
-
-
-            testStatement.close();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
+    //    public void addField(){
+    //        try {
+    //            PreparedStatement testStatement;
+    //            String sqlStatement = "SELECT * from ChillernNavn;";
+    //            testStatement = myConnection.prepareStatement(sqlStatement);
+    //            rs = testStatement.executeQuery();
+    //            while (rs.next()) {
+    //                System.out.println(rs.getString(1)); //gets the first column's rows.
+    //            }
+    //
+    //
+    //
+    //            testStatement.close();
+    //        } catch (SQLException e) {
+    //            e.printStackTrace();
+    //        }
+    //    }
 
     public void printToListView(){
         listView.setItems(FXCollections.observableList(getUpdatedList()));
