@@ -34,7 +34,6 @@ public class AddTreningsøkt {
     }
 
     public String getSQLStatement(){
-//        String sqlStatement = "INSERT INTO Treningsøkt (Dato, Tidspunkt, Varighet, Notat_for_treningen) VALUES " + "('" + getDate() + getTime() + getVarighet() + getNotatForTreningen() + "')";
         String sqlStatement = "INSERT INTO Treningsøkt (Dato, Tidspunkt, Varighet, Notat_for_treningen) VALUES " + "(?, ? , ?, ?)";
         return sqlStatement;
     }
