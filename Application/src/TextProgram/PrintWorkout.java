@@ -5,12 +5,9 @@ import TextProgram.PrintElements.*;
 
 public class PrintWorkout {
 	
-	public PrintWorkout(){
-		printWorkoutFromDB();
-	}
-	
-	public void printWorkoutFromDB() {
-		ReceiveMain recieveØkt = new ReceiveMain();
-	}
+		RecieveMain recieveMain = new RecieveMain();
+		RecieveForhold recieveForhold = new RecieveForhold();
+		RecieveTreningsøkt recieveTreningsøkt = new RecieveTreningsøkt();
+
 
 }

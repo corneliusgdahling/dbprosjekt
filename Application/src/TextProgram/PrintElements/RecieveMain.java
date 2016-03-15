@@ -6,10 +6,10 @@ import java.util.Calendar;
 import java.util.Scanner;
 
 
-public class ReceiveMain {
+public class RecieveMain {
 	
-	public ReceiveMain(){
-		ReceiveTreningsøkt treningsøkt = new ReceiveTreningsøkt();
+	public RecieveMain(){
+		RecieveTreningsøkt treningsøkt = new RecieveTreningsøkt();
 	}
 
 }
