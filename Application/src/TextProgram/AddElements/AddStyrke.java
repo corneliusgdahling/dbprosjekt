@@ -16,7 +16,7 @@ public class AddStyrke {
         try {
             PreparedStatement addØktStatement = myConnection.prepareStatement(getSQLStatement());
             addØktStatement.setInt(1, øvelse_id);
-            addØktStatement.setInt(2, getBelastning());
+            addØktStatement.setDouble(2, getBelastning());
             addØktStatement.setInt(3, getRepitisjoner());
             addØktStatement.setInt(4, getNumberOfSets());
 
@@ -31,9 +31,9 @@ public class AddStyrke {
         return sqlStatement;
     }
 
-    public int getBelastning(){
+    public double getBelastning(){
         System.out.println("\nEnter how much weight was used on this exercise (Required).");
-        int belastning = Integer.parseInt(sc.nextLine());
+        double belastning = Double.parseDouble(sc.nextLine());
         return belastning;
     }
 

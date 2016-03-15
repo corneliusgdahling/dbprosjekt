@@ -10,11 +10,11 @@ public class CreateWorkout {
 
 
     public void insertWorkoutIntoDB() {
-    	DetermineWhere determineWhere = new DetermineWhere();
         AddTreningsøkt addTreningsøkt = new AddTreningsøkt();
         DetermineType determineType = new DetermineType();
         AddForhold addForhold = new AddForhold();
-        
+        DetermineWhere determineWhere = new DetermineWhere();
+
     }
 
 }

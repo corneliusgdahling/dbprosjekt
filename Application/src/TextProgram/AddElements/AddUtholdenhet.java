@@ -19,7 +19,7 @@ public class AddUtholdenhet {
         try {
             PreparedStatement addØktStatement = myConnection.prepareStatement(getSQLStatement());
             addØktStatement.setInt(1, øvelse_id);
-            addØktStatement.setInt(2, getLengde());
+            addØktStatement.setDouble(2, getLengde());
             addØktStatement.setInt(3, getVarighet());
 
             addØktStatement.executeUpdate();
@@ -37,25 +37,23 @@ public class AddUtholdenhet {
         TextProgram.MYSQL_Connection mysql = new TextProgram.MYSQL_Connection("jdbc:mysql://mysql.stud.ntnu.no/cornelgd_databaser", "cornelgd_dbprosj", "1234");
         Connection myConnection = mysql.getConnection();
         ResultSet rs;
-        String getVarighetStatement = "SELECT Varighet FROM Treningsøkt WHERE Dato = '"+getDate()+"'";
+//        String getVarighetStatement = "SELECT Varighet FROM Treningsøkt WHERE Dato = '"+getDate()+"'";
+        String getVarighetStatement = "SELECT Varighet FROM Utholdenhetstrening ORDER BY Utholdenhetstrening_id DESC";
+        int varighet;
         try {
             PreparedStatement ps = myConnection.prepareStatement(getVarighetStatement);
             rs = ps.executeQuery();
-            int varighet;
-            if (rs.next()){
-                varighet = rs.getInt(1);
-                return varighet;
-            }
+            varighet = rs.getInt(1);
+            return varighet;
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
         return 1;
     }
 
-    public int getLengde(){
+    public double getLengde(){
         System.out.println("\nHow many killometers was your endurance exercise? (Required)");
-        int lengde = Integer.parseInt(sc.nextLine());
+        double lengde = Double.parseDouble(sc.nextLine());
         return lengde;
     }
 
