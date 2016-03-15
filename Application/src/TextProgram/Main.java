@@ -1,5 +1,7 @@
 package TextProgram;
 
+import TextProgram.AddElements.AddØvelse;
+
 import java.util.Scanner;
 
 
@@ -12,6 +14,7 @@ public class Main {
         System.out.println("-----------------------------------------------\n");
         System.out.println("Press 1 to enter a new workout.");
         System.out.println("Press 2 to view old workouts.");
+        System.out.println("Press 3 to add a new type of workout.");
         Scanner sc = new Scanner(System.in);
         answer = sc.nextInt();
         if (answer == 1){
@@ -19,6 +22,9 @@ public class Main {
         }
         else if (answer == 2){
             PrintWorkout print = new PrintWorkout();
+        }
+        else if (answer == 3){
+            AddØvelse nyØvelse = new AddØvelse();
         }
 
     }

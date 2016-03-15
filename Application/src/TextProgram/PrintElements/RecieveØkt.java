@@ -18,8 +18,13 @@ public class RecieveØkt {
 			Statement st = myConnection.createStatement();
 			String sql = ("SELECT * FROM Treningsøkt");
 			ResultSet rs = st.executeQuery(sql);
-			if(rs.next()) {
-				System.out.println(rs.getString(1));
+			while(rs.next()) {
+				System.out.print("     " + rs.getString(1) + "     ");
+				System.out.print(rs.getString(2) + "    ");
+				System.out.print(rs.getString(3) + "    ");
+				System.out.print(rs.getString(4) + "    ");
+				System.out.print(rs.getString(5) + "    ");
+				System.out.println();
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
