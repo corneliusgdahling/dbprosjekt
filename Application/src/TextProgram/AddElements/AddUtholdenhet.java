@@ -37,7 +37,6 @@ public class AddUtholdenhet {
         TextProgram.MYSQL_Connection mysql = new TextProgram.MYSQL_Connection("jdbc:mysql://mysql.stud.ntnu.no/cornelgd_databaser", "cornelgd_dbprosj", "1234");
         Connection myConnection = mysql.getConnection();
         ResultSet rs;
-//        String getVarighetStatement = "SELECT Varighet FROM Treningsøkt WHERE Dato = '"+getDate()+"'";
         String getVarighetStatement = "SELECT Varighet FROM Treningsøkt ORDER BY Økt_id DESC";
         int varighet;
         try {
@@ -54,7 +53,7 @@ public class AddUtholdenhet {
     }
 
     public double getLengde(){
-        System.out.println("\nHow many killometers was your endurance exercise? (Required)");
+        System.out.println("\nHow many kilometers was your endurance exercise? (Required)");
         double lengde = Double.parseDouble(sc.nextLine());
         return lengde;
     }
