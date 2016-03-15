@@ -38,13 +38,15 @@ public class AddUtholdenhet {
         Connection myConnection = mysql.getConnection();
         ResultSet rs;
 //        String getVarighetStatement = "SELECT Varighet FROM Treningsøkt WHERE Dato = '"+getDate()+"'";
-        String getVarighetStatement = "SELECT Varighet FROM Utholdenhetstrening ORDER BY Utholdenhetstrening_id DESC";
+        String getVarighetStatement = "SELECT Varighet FROM Treningsøkt ORDER BY Økt_id DESC";
         int varighet;
         try {
             PreparedStatement ps = myConnection.prepareStatement(getVarighetStatement);
             rs = ps.executeQuery();
-            varighet = rs.getInt(1);
-            return varighet;
+            if (rs.next()) {
+                varighet = rs.getInt(1);
+                return varighet;
+            }
         } catch (SQLException e) {
             e.printStackTrace();
         }
