@@ -38,12 +38,12 @@ public class AddTreningsøkt {
 
     public int getVarighet(){
         System.out.println("Enter the duration of your workout (Required).");
-        int varighet = sc.nextInt();
+        int varighet = Integer.parseInt(sc.nextLine());
         return varighet;
     }
 
     public String getNotatForTreningen(){
-        System.out.println("Enter any additional notes for the workout.");
+        System.out.println("\nEnter any additional notes for the workout.");
         String notat = sc.nextLine();
         if (notat.length() < 1){
             notat = null;

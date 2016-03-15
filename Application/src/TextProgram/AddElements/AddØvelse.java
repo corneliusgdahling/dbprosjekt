@@ -32,19 +32,19 @@ public class AddØvelse {
     }
 
     public int getØvelse_id(){
-        System.out.println("\nPlease enter the exercise ID.");
-        int øvelse_id = sc.nextInt();
+        System.out.println("\nPlease enter the exercise ID (Required).");
+        int øvelse_id = Integer.parseInt(sc.nextLine());
         return øvelse_id;
     }
 
     public String getNavn(){
-        System.out.println("\nEnter the name of the exercise.");
+        System.out.println("\nEnter the name of the exercise (Required).");
         String navn = sc.nextLine();
         return navn;
     }
 
     public String getBeskrivelse(){
-        System.out.println("\nWrite a short description of the exercise.");
+        System.out.println("\nWrite a short description of the exercise (Required).");
         String besk = sc.nextLine();
         return besk;
     }
