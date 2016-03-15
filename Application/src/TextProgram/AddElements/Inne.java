@@ -12,15 +12,15 @@ public class Inne {
 	private Scanner sc = new Scanner(System.in);
 	
 	
-	public Inne(int forhold_id){
+	public Inne(int økt_id){
 		TextProgram.MYSQL_Connection mysql = new TextProgram.MYSQL_Connection("jdbc:mysql://mysql.stud.ntnu.no/cornelgd_databaser", "cornelgd_dbprosj", "1234");
 		Connection myConnection = mysql.getConnection();
 		
 		try {
 	
 			PreparedStatement ps = myConnection.prepareStatement(getSQLStatement());
-			ps.setString(1, getAtmosfære());
-			ps.setInt(2, forhold_id);
+            ps.setInt(1, økt_id);
+            ps.setString(2, getAtmosfære());
             ps.executeUpdate();
 			
 		} catch (SQLException e) {
@@ -30,7 +30,7 @@ public class Inne {
 	
 	
 	public String getSQLStatement(){
-		String sqlStatement = "INSERT INTO Innendørs (Atmosfære, Forhold_id) VALUES (?, ?) ";
+		String sqlStatement = "INSERT INTO Innendørs (Økt_id, Atmosfære) VALUES (?, ?) ";
 		return sqlStatement;
 	}
 	

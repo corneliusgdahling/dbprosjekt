@@ -17,10 +17,9 @@ public class AddForhold {
         try {
 
             PreparedStatement ps = myConnection.prepareStatement(getSQLStatement());
-            ps.setInt(1, getForhold_id());
-            ps.setInt(2, getØkt_id());
-            ps.setInt(3, getPrestasjon());
-            ps.setInt(4, getForm());
+            ps.setInt(1, getØkt_id());
+            ps.setInt(2, getPrestasjon());
+            ps.setInt(3, getForm());
             ps.executeUpdate();
 
 
@@ -48,11 +47,6 @@ public class AddForhold {
         return 1;
     }
 
-    public int getForhold_id(){
-        System.out.println("\nEnter the forhold_id");
-        int forhold_id = Integer.parseInt(sc.nextLine());
-        return forhold_id;
-    }
 
     public int getPrestasjon(){
         System.out.println("\nHow happy are you with your performance (1-100) where 100 is perfect (Required).");
@@ -67,7 +61,7 @@ public class AddForhold {
     }
 
     public String getSQLStatement(){
-        String sqlStatement = "INSERT INTO Forhold (Forhold_id, Økt_id, Prestasjon, Personlig_form) VALUES (?, ?, ?, ?)";
+        String sqlStatement = "INSERT INTO Forhold (Økt_id, Prestasjon, Personlig_form) VALUES (?, ?, ?)";
         return sqlStatement;
     }
 }

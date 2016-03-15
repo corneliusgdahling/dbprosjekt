@@ -10,7 +10,7 @@ public class PrintWorkout {
 	}
 	
 	public void printWorkoutFromDB() {
-		RecieveØkt recieveØkt = new RecieveØkt();
+		ReceiveMain recieveØkt = new ReceiveMain();
 	}
 
 }

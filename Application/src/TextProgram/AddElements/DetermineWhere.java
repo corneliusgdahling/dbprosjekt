@@ -59,18 +59,18 @@ public class DetermineWhere {
 		inneOrUte();
 	}
 
-	public int getForhold_id(){
+	public int getØkt_id(){
 		TextProgram.MYSQL_Connection mysql = new TextProgram.MYSQL_Connection("jdbc:mysql://mysql.stud.ntnu.no/cornelgd_databaser", "cornelgd_dbprosj", "1234");
 		Connection myConnection = mysql.getConnection();
 		ResultSet rs;
-		String getForhold_id_statement = "SELECT Forhold_id FROM Forhold ORDER BY Økt_id DESC";
+		String getØkt_id_statement = "SELECT Økt_id FROM Forhold ORDER BY Økt_id DESC";
 		try {
-			PreparedStatement ps = myConnection.prepareStatement(getForhold_id_statement);
+			PreparedStatement ps = myConnection.prepareStatement(getØkt_id_statement);
 			rs = ps.executeQuery();
-			int forhold_id;
+			int Økt_id;
 			if (rs.next()){
-				forhold_id = rs.getInt(1);
-				return forhold_id;
+				Økt_id = rs.getInt(1);
+				return Økt_id;
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -83,10 +83,10 @@ public class DetermineWhere {
 		System.out.println("\nWas your exercise indoors or outside? 1. Inside 2. Outside (Required)");
 		int answer = Integer.parseInt(sc.nextLine());
 		if (answer == 1){
-			Inne inne = new Inne(getForhold_id());
+			Inne inne = new Inne(getØkt_id());
 		}
 		else{
-			Ute ute = new Ute(getForhold_id());
+			Ute ute = new Ute(getØkt_id());
 		}
 	}
 	
