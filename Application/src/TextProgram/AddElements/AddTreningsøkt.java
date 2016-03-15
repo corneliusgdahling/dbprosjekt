@@ -2,7 +2,6 @@ package TextProgram.AddElements;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -14,7 +13,7 @@ public class AddTreningsøkt {
     private Scanner sc = new Scanner(System.in);
 
     public AddTreningsøkt(){
-        sample.MYSQL_Connection mysql = new sample.MYSQL_Connection("jdbc:mysql://mysql.stud.ntnu.no/cornelgd_databaser", "cornelgd_dbprosj", "1234");
+        TextProgram.MYSQL_Connection mysql = new TextProgram.MYSQL_Connection("jdbc:mysql://mysql.stud.ntnu.no/cornelgd_databaser", "cornelgd_dbprosj", "1234");
         Connection myConnection = mysql.getConnection();
         System.out.println("\n\nPlease enter all the necessary information. Information that is " +
                 "required will have a '(Required)' tag. For items you wish to skip (that are not required)" +

@@ -11,7 +11,7 @@ public class AddØvelse {
     Scanner sc = new Scanner(System.in);
 
     public AddØvelse(){
-        sample.MYSQL_Connection mysql = new sample.MYSQL_Connection("jdbc:mysql://mysql.stud.ntnu.no/cornelgd_databaser", "cornelgd_dbprosj", "1234");
+        TextProgram.MYSQL_Connection mysql = new TextProgram.MYSQL_Connection("jdbc:mysql://mysql.stud.ntnu.no/cornelgd_databaser", "cornelgd_dbprosj", "1234");
         Connection myConnection = mysql.getConnection();
         try {
             PreparedStatement addØktStatement = myConnection.prepareStatement(getSQLStatement());
