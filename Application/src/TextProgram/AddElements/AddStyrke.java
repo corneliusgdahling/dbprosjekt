@@ -32,19 +32,19 @@ public class AddStyrke {
     }
 
     public int getBelastning(){
-        System.out.println("\n Enter how much weight was used on this exercise (Required).");
+        System.out.println("\nEnter how much weight was used on this exercise (Required).");
         int belastning = Integer.parseInt(sc.nextLine());
         return belastning;
     }
 
     public int getRepitisjoner(){
-        System.out.println("\n Enter how many repititions you did for each set (Required).");
+        System.out.println("\nEnter how many repititions you did for each set (Required).");
         int reps = Integer.parseInt(sc.nextLine());
         return reps;
     }
 
     public int getNumberOfSets(){
-        System.out.println("\n Enter how many sets you did (Required).");
+        System.out.println("\nEnter how many sets you did (Required).");
         int sets = Integer.parseInt(sc.nextLine());
         return sets;
     }
