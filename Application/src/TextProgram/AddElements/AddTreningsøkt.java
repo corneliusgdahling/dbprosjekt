@@ -53,7 +53,7 @@ public class AddTreningsøkt {
 
     public String getDate() {
         Calendar currentDate = Calendar.getInstance(); //Get the current date
-        SimpleDateFormat formatter = new SimpleDateFormat("dd.MM.yyyy"); //format it as per your requirement
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd"); //format it as per your requirement
         String dateNow = formatter.format(currentDate.getTime());
 
         return dateNow;
