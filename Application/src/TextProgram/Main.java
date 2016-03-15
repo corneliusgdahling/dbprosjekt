@@ -17,6 +17,9 @@ public class Main {
         if (answer == 1){
             CreateWorkout newWorkout = new CreateWorkout();
         }
+        else if (answer == 2){
+            PrintWorkout print = new PrintWorkout();
+        }
 
     }
 }
