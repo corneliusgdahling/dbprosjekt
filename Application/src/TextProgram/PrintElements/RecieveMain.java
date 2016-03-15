@@ -9,7 +9,8 @@ import java.util.Scanner;
 public class RecieveMain {
 	
 	public RecieveMain(){
-		RecieveTreningsøkt treningsøkt = new RecieveTreningsøkt();
+		//RecieveTreningsøkt treningsøkt = new RecieveTreningsøkt();
+		
 	}
 
 }
