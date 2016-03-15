@@ -16,7 +16,6 @@ public class AddTreningsøkt {
     public AddTreningsøkt(){
         sample.MYSQL_Connection mysql = new sample.MYSQL_Connection("jdbc:mysql://mysql.stud.ntnu.no/cornelgd_databaser", "cornelgd_dbprosj", "1234");
         Connection myConnection = mysql.getConnection();
-        ResultSet rs;
         System.out.println("\n\nPlease enter all the necessary information. Information that is " +
                 "required will have a '(Required)' tag. For items you wish to skip (that are not required)" +
                 " press enter.\n");
@@ -39,7 +38,7 @@ public class AddTreningsøkt {
     }
 
     public int getVarighet(){
-        System.out.println("Enter the duration of your workout (Required)");
+        System.out.println("Enter the duration of your workout (Required).");
         int varighet = sc.nextInt();
         return varighet;
     }
@@ -47,9 +46,9 @@ public class AddTreningsøkt {
     public String getNotatForTreningen(){
         System.out.println("Enter any additional notes for the workout.");
         String notat = sc.nextLine();
-//        if (notat.length() < 1){
-//            notat = null;
-//        }
+        if (notat.length() < 1){
+            notat = null;
+        }
         return notat;
     }
 
