@@ -1,7 +1,6 @@
 package TextProgram.PrintElements;
 
 
-import javax.swing.text.DateFormatter;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -13,12 +12,12 @@ public class RecieveTreningsøkt {
     Connection myConnection = mysql.getConnection();
     Statement st;
 
-    public RecieveTreningsøkt(){
+    public RecieveTreningsøkt(String dato){
         try {
             Statement st = myConnection.createStatement();
-            String sql = ("SELECT * FROM ReceiveTreningsøkt");
+            String sql = ("SELECT * FROM Treningsøkt WHERE Dato = '"+ dato + "'");
             ResultSet rs = st.executeQuery(sql);
-            while(rs.next()) {
+            if(rs.next()) {
                 System.out.print("     " + rs.getString(1) + "     ");
                 System.out.print(rs.getString(2) + "    ");
                 System.out.print(rs.getString(3) + "    ");
