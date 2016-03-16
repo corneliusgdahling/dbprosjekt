@@ -13,15 +13,15 @@ public class RecieveUtholdenhet {
     Connection myConnection = mysql.getConnection();
     Statement st;
 
-    public RecieveUtholdenhet(){
+    public RecieveUtholdenhet(int økt_id){
+//        System.out.println("Test utholdenhet");
         try {
             Statement st = myConnection.createStatement();
             String sql = ("SELECT * FROM Utholdenhetstrening");
             ResultSet rs = st.executeQuery(sql);
-            while(rs.next()) {
-                System.out.print("     " + rs.getString(1) + "     ");
-                System.out.print(rs.getString(2) + "    ");
-                System.out.print(rs.getString(3) + "    ");
+            if(rs.next()) {
+                System.out.print("Distanse: " + rs.getDouble(2) + "(km)    ");
+                System.out.println();
                 System.out.println();
             }
         } catch (SQLException e) {

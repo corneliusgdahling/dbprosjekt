@@ -13,16 +13,16 @@ public class RecieveStyrke {
     Connection myConnection = mysql.getConnection();
     Statement st;
 
-    public RecieveStyrke(){
+    public RecieveStyrke(int økt_id){
         try {
             Statement st = myConnection.createStatement();
             String sql = ("SELECT * FROM Styrke");
             ResultSet rs = st.executeQuery(sql);
-            while(rs.next()) {
-                System.out.print("     " + rs.getString(1) + "     ");
-                System.out.print(rs.getString(2) + "    ");
-                System.out.print(rs.getString(3) + "    ");
-                System.out.print(rs.getString(4) + "    ");
+            if(rs.next()) {
+                System.out.print("    Belastning: " + rs.getDouble(2) + "    ");
+                System.out.print("Repetisjoner: " + rs.getString(3) + "    ");
+                System.out.print("Sett: " + rs.getString(4) + "    ");
+                System.out.println();
                 System.out.println();
             }
         } catch (SQLException e) {

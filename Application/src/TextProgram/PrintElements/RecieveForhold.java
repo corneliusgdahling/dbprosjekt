@@ -17,9 +17,9 @@ public class RecieveForhold {
 			String sql = ("SELECT * FROM Forhold WHERE Økt_id = '"+ økt_id +"'");
 			ResultSet rs = st.executeQuery(sql);
 			if(rs.next()) {
-				System.out.print("     " + rs.getString(1) + "     ");
-				System.out.print(rs.getString(2) + "    ");
-				System.out.print(rs.getString(3) + "    ");
+				System.out.print("     Prestasjon (1-100): " + rs.getString(2) + "     ");
+				System.out.print("Personlig form: " + rs.getString(3) + "    ");
+				System.out.println();
 				System.out.println();
 			}
 		} catch (SQLException e) {

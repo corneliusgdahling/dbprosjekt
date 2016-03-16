@@ -18,11 +18,9 @@ public class RecieveUtendørs {
             Statement st = myConnection.createStatement();
             String sql = ("SELECT * FROM Utendørs WHERE Økt_id = '"+ økt_id +"'");
             ResultSet rs = st.executeQuery(sql);
-            while(rs.next()) {
-                System.out.print("     " + rs.getString(1) + "     ");
-                System.out.print(rs.getString(2) + "    ");
-                System.out.print(rs.getString(3) + "    ");
-                System.out.println();
+            if(rs.next()) {
+                System.out.print("     Værtype: " + rs.getString(2) + "    ");
+                System.out.print("Temperatur: " + rs.getString(3) + "    ");
             }
         } catch (SQLException e) {
             // TODO Auto-generated catch block

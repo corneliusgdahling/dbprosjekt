@@ -2,6 +2,7 @@ package TextProgram;
 
 import TextProgram.AddElements.AddØvelse;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 
@@ -16,7 +17,12 @@ public class Main {
         System.out.println("Press 2 to view old workouts.");
         System.out.println("Press 3 to add a new type of workout.");
         Scanner sc = new Scanner(System.in);
-        answer = sc.nextInt();
+        try{
+            answer = sc.nextInt();
+        }
+        catch (InputMismatchException e){
+            e.printStackTrace();
+        }
         if (answer == 1){
             CreateWorkout newWorkout = new CreateWorkout();
         }

@@ -28,7 +28,7 @@ public class AddStyrke {
     }
 
     public String getSQLStatement(){
-        String sqlStatement = "INSERT INTO Styrke (Øvelse_id, Belastning, Repitisjoner, Sett) VALUES " + "(?, ? , ?, ?)";
+        String sqlStatement = "INSERT INTO Styrke (Øvelse_id, Belastning, Repitisjoner, Sett, Økt_id) VALUES " + "(?, ? , ?, ?, ?)";
         return sqlStatement;
     }
 

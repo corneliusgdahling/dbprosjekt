@@ -30,7 +30,7 @@ public class AddUtholdenhet {
     }
 
     public String getSQLStatement(){
-        String sqlStatement = "INSERT INTO Utholdenhetstrening (Øvelse_id, Lengde, Varighet) VALUES " + "(?, ? , ?)";
+        String sqlStatement = "INSERT INTO Utholdenhetstrening (Øvelse_id, Lengde, Varighet, Økt_id) VALUES " + "(?, ? , ?, ?)";
         return sqlStatement;
     }
 

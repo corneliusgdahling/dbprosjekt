@@ -19,8 +19,8 @@ public class RecieveInnendørs {
             String sql = ("SELECT * FROM Innendørs WHERE Økt_id = '"+ økt_id +"'");
             ResultSet rs = st.executeQuery(sql);
             if(rs.next()) {
-                System.out.print("     " + rs.getString(1) + "     ");
-                System.out.print(rs.getString(2) + "    ");
+                System.out.print("     Atmonsfære: " + rs.getString(2) + "    ");
+                System.out.println();
                 System.out.println();
             }
         } catch (SQLException e) {
