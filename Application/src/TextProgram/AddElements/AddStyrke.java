@@ -10,7 +10,7 @@ public class AddStyrke {
 
     private Scanner sc = new Scanner(System.in);
 
-    public AddStyrke(int øvelse_id){
+    public AddStyrke(int øvelse_id, int økt_id){
         TextProgram.MYSQL_Connection mysql = new TextProgram.MYSQL_Connection("jdbc:mysql://mysql.stud.ntnu.no/cornelgd_databaser", "cornelgd_dbprosj", "1234");
         Connection myConnection = mysql.getConnection();
         try {
@@ -19,6 +19,7 @@ public class AddStyrke {
             addØktStatement.setDouble(2, getBelastning());
             addØktStatement.setInt(3, getRepitisjoner());
             addØktStatement.setInt(4, getNumberOfSets());
+            addØktStatement.setInt(5, økt_id);
 
             addØktStatement.executeUpdate();
         } catch (SQLException e) {

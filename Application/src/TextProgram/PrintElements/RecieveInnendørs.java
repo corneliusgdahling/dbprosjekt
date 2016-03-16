@@ -13,12 +13,12 @@ public class RecieveInnendørs {
     Connection myConnection = mysql.getConnection();
     Statement st;
 
-    public RecieveInnendørs(){
+    public RecieveInnendørs(int økt_id){
         try {
             Statement st = myConnection.createStatement();
-            String sql = ("SELECT * FROM Innendørs");
+            String sql = ("SELECT * FROM Innendørs WHERE Økt_id = '"+ økt_id +"'");
             ResultSet rs = st.executeQuery(sql);
-            while(rs.next()) {
+            if(rs.next()) {
                 System.out.print("     " + rs.getString(1) + "     ");
                 System.out.print(rs.getString(2) + "    ");
                 System.out.println();

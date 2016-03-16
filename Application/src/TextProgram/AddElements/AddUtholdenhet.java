@@ -13,7 +13,7 @@ public class AddUtholdenhet {
 
     private Scanner sc = new Scanner(System.in);
 
-    public AddUtholdenhet(int øvelse_id){
+    public AddUtholdenhet(int øvelse_id, int økt_id){
         TextProgram.MYSQL_Connection mysql = new TextProgram.MYSQL_Connection("jdbc:mysql://mysql.stud.ntnu.no/cornelgd_databaser", "cornelgd_dbprosj", "1234");
         Connection myConnection = mysql.getConnection();
         try {
@@ -21,6 +21,7 @@ public class AddUtholdenhet {
             addØktStatement.setInt(1, øvelse_id);
             addØktStatement.setDouble(2, getLengde());
             addØktStatement.setInt(3, getVarighet());
+            addØktStatement.setInt(4, økt_id);
 
             addØktStatement.executeUpdate();
         } catch (SQLException e) {

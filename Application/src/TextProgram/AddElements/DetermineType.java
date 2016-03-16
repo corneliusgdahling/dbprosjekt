@@ -34,6 +34,26 @@ public class DetermineType {
         return 1;
     }
 
+    public int getØkt_id(){
+        TextProgram.MYSQL_Connection mysql = new TextProgram.MYSQL_Connection("jdbc:mysql://mysql.stud.ntnu.no/cornelgd_databaser", "cornelgd_dbprosj", "1234");
+        Connection myConnection = mysql.getConnection();
+        ResultSet rs;
+        String getØkt_id_statement = "SELECT Økt_id FROM Treningsøkt ORDER BY Økt_id DESC";
+        try {
+            PreparedStatement ps = myConnection.prepareStatement(getØkt_id_statement);
+            rs = ps.executeQuery();
+            int Økt_id;
+            if (rs.next()){
+                Økt_id = rs.getInt(1);
+                return Økt_id;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return 1;
+    }
+
     public String getNavn(){
         System.out.println("\nPlease enter the name of the exercise (Required).");
         String navn = sc.nextLine();
@@ -42,10 +62,10 @@ public class DetermineType {
 
     public void styrkeOrUtholdenhet(){
         if (getØvelseid() > 200){
-            AddStyrke styrke = new AddStyrke(getØvelseid());
+            AddStyrke styrke = new AddStyrke(getØvelseid(), getØkt_id());
         }
         else{
-            AddUtholdenhet utholdenhet = new AddUtholdenhet(getØvelseid());
+            AddUtholdenhet utholdenhet = new AddUtholdenhet(getØvelseid(), getØkt_id());
         }
     }
 }
